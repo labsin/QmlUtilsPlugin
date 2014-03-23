@@ -1,0 +1,29 @@
+#include <QtQml>
+#include <QtQml/QQmlContext>
+#include "backend.h"
+#include "qmlenv.h"
+
+const QLatin1String BackendPlugin::URI = QLatin1String("@UTILS_URI@");
+
+static QObject *env_qobject_singletontype_provider(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+
+    QmlEnv *example = new QmlEnv();
+    return example;
+}
+
+void BackendPlugin::registerTypes(const char *uri)
+{
+    Q_ASSERT(uri == URI);
+
+    // @uri @UTILS_URI@
+//    qmlRegisterType<QmlEnv>(uri, 1, 0, "Env");
+    qmlRegisterSingletonType<QmlEnv>(uri, VERSION_MAJOR, VERSION_MINOR, "Env",env_qobject_singletontype_provider);
+}
+
+void BackendPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
+{
+    QQmlExtensionPlugin::initializeEngine(engine, uri);
+}
