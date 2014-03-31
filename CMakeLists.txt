@@ -65,3 +65,5 @@ add_custom_command(TARGET ${UTILS_TARGET} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E echo "Run qmlplugindump"
     COMMAND qmlplugindump -notrelocatable ${UTILS_TARGET} 1.0 ${LIB_DIR} > ${CP_LIB_TO}/${UTILS_TARGET_TOLOWER}.qmltypes)
 
+install(TARGETS ${UTILS_TARGET}
+    DESTINATION lib/${BUILD_ARCH} )
