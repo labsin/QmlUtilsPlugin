@@ -72,4 +72,6 @@ add_custom_command(TARGET ${UTILS_TARGET} POST_BUILD
 endif(QMLDUMP)
 
 install(TARGETS ${UTILS_TARGET}
-    DESTINATION lib/${BUILD_ARCH} )
+    DESTINATION lib/${BUILD_ARCH}/${UTILS_TARGET} )
+install(FILES "qmldir"
+    DESTINATION lib/${BUILD_ARCH}/${UTILS_TARGET} )
