@@ -36,11 +36,13 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/backend.cpp.in ${CMAKE_CURRENT_BINARY
 set(utils_HDRS
     ${CMAKE_CURRENT_BINARY_DIR}/backend.h
     ${CMAKE_CURRENT_SOURCE_DIR}/qmlenv.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/qmlfile.h
     )
 
 set(utils_SRCS
     ${CMAKE_CURRENT_BINARY_DIR}/backend.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/qmlenv.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/qmlfile.cpp
     )
 
 add_library(${UTILS_TARGET} SHARED

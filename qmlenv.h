@@ -11,9 +11,7 @@ public:
     ~QmlEnv();
 
     Q_INVOKABLE static QString readXdg(const QString type);
-    Q_INVOKABLE static QString readEnvVar(const QString var);
-    Q_INVOKABLE static bool mkdir(const QString dir);
-    Q_INVOKABLE static bool fileExists(const QString file);
+	Q_INVOKABLE static QString readEnvVar(const QString var);
 };
 
 #endif // QMLENV_H
