@@ -28,10 +28,10 @@ option(QMLDUMP "Dump qml info so it's loadable by the QtCreator editor" ON)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/backend.h.in ${CMAKE_CURRENT_BINARY_DIR}/backend.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/backend.cpp.in ${CMAKE_CURRENT_BINARY_DIR}/backend.cpp)
 
-set(LIBS "")
-if(CLICK_MODE)
-    deploy_libs(${LIBS})
-endif(CLICK_MODE)
+#set(LIBS "")
+#if(CLICK_MODE)
+#    deploy_libs(${LIBS})
+#endif(CLICK_MODE)
 
 set(utils_HDRS
     ${CMAKE_CURRENT_BINARY_DIR}/backend.h
